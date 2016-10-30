@@ -56,19 +56,6 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
             $facebook.api("/me/posts").then(function(response) {
                 $scope.posts = response.data;
             });
-
-
-            var albums = response.albums.data;
-            for(var i = 0; i < albums.length; i ++) {
-                $facebook.api("/" + albums[i].id + "/photos").then(function(res) {
-                    var album = res.data;
-                    for(var j = 0; j < album.length; j ++) {
-                        $facebook.api("/" + album[j].id + "?fields=images").then(function(red) {
-                            var images = red.images[0].source;
-                        });
-                    }
-                });
-            }
         },
 
         function(err) {
