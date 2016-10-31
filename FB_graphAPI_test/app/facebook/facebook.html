@@ -1,59 +1,54 @@
-<div class="row" ng-controller="FacebookCtrl">
-    <div class="col-md-4">
-    <h4>{{ welcomeMsg }}</h4>
-    <div ng-if="isLoggedIn">
-        <a href="{{ userInfo.link }}" target="_blank">
-            <img ng-src="{{ picture }}">
-        </a>
-    </div>
-    <br>
-    <div ng-if="!isLoggedIn">
-        <button type="button" class="btn btn-default" ng-click="login()">Login</button>
-    </div>
-    <div ng-if="isLoggedIn">
-        <button type="button" class="btn btn-default" ng-click="logout()">Logout</button>
-    </div>
-    <br><br>
-    <div class="well" ng-if="isLoggedIn">
-        <h4>User Info</h4>
-        <ul>
-        <li>Id: {{ userInfo.id }}</li>
-        <li>First Name: {{ userInfo.first_name }}</li>
-        <li>Last Name: {{ userInfo.last_name }}</li>
-        <li>Email: {{ userInfo.email }}</li>
-        <li>Gender: {{ userInfo.gender }}</li>
-        <li>Locale: {{ userInfo.locale }}</li>
-        </ul>
-    </div>
-    <br>
-    <div class="well" ng-if="isLoggedIn">
-        <h4>Permissions</h4>
-        <ul>
-        <li ng-repeat="permission in permissions">{{ permission.permission }} - {{ permission.status }}</li>
-        </ul>
-    </div>
-    </div>
-    <div class="col-md-8">
-        <h3>Welcom to Angular Book</h3>
+<div ng-controller="FacebookCtrl">
+    <div class="jumbotron">
+        <h2 ng-if="!isLoggedIn">Welcome to Facebok Poster</h2>
+        <h2 ng-if="isLoggedIn">{{ welcomeMsg }}</h2>
+        <h4 ng-if="!isLoggedIn">Login To Start Post!</h4>
+        <div ng-if="!isLoggedIn">
+            <button type="button" class="login-btn" ng-click="login()">Login</button>
+        </div>
         <div ng-if="isLoggedIn">
-            <form ng-submit="postStatus()">
-                <div class="form-group">
-                    <label>Status Update</label>
-                    <textarea class="form-control" ng-model="body"></textarea>
+            <button type="button" class="login-btn" ng-click="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="well" ng-if="isLoggedIn">
+                <img ng-src="{{ picture }}">
+                <h4>User Info</h4>
+                <ul>
+                    <li>Name: {{ userInfo.first_name }} {{ userInfo.last_name }}</li>
+                    <li>Email: {{ userInfo.email }}</li>
+                    <li>Gender: {{ userInfo.gender }}</li>
+                </ul>
+            </div>
+            <br>
+        </div>
+        <div class="col-md-8">
+            <div ng-if="isLoggedIn">
+                <form ng-submit="postStatus()">
+                    <div class="form-group">
+                        <label>Status Update</label>
+                        <textarea class="form-control" ng-model="body"></textarea>
+                        <button type="submit" class="btn btn-default submit">Submit</button>
+                    </div>
+                </form>
+                <br><br>
+                <div ng-repeat="post in posts | limitTo: limitation" class="stbody">
+                    <div class="sttext">
+                        <div class="stimg">
+                            <img ng-src="{{ picture }}">
+                        </div>
+                    
+                        {{ post.message }}
+                        <hr>
+                        <div class="sttime">{{ post.created_time }}</div>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <br><br>
-            <div ng-repeat="post in posts" class="stbody">
-                <div class="stimg">
-                    <img ng-src="{{ picture }}">
-                </div>
-                <div class="sttext">
-                    {{ post.message }}
-                    <div class="sttime">{{ post.created_time }}</div>
+                <div>
+                    <a href="" ng-click="loadMore()" class="btn btn-default submit">Load More</a>
+                    <br><br>
                 </div>
             </div>
         </div>
-        <div ng-if="!isLoggedIn">Login To Start Post!</div>
     </div>
 </div>

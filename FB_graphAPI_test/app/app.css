@@ -1,56 +1,128 @@
 /* app css stylesheet */
+hr {
+  margin: 5px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  height: 1px;
+  border: 0;
+}
 
-.menu {
+.well li {
   list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+  margin-left: -40px;
 }
 
 .stbody {
   min-height: 70px;
   margin-bottom: 10px;
-  border-bottom: 1px #CC0000;
 }
 
 .stimg {
-  float: left;
-  height: 50px;
-  width: 50px;
+  position: absolute;
+  left: -30px;
+  top: -30px;
+  background: #FFF;
+  height: 60px;
+  width: 60px;
   border: 1px solid #dedede;
+  border-radius: 50%;
   padding: 5px;
 }
 
+.stimg img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
 .sttext {
-  margin-left: 70px;
-  min-height: 50px;
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  min-height: 70px;
   word-wrap: break-word;
-  overflow: hidden;
   padding: 5px;
+  padding-left: 35px;
   display: block;
   font-family: "Georgia", 'Times New Roman', Times, serif;
+  border: 1px solid #dedede;
 }
 
 .sttime {
   font-size: 11px;
   color: #999;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 5px;
+}
+
+.jumbotron {
+  height: 600px;
+  background: #333;
+  background-image: url("../app/images/fb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.jumbotron:hover {
+  background-image: url("../app/images/fb_ori.png");
+}
+
+.jumbotron h2{
+  color: #FFF;
+  margin-top: 200px;
+}
+
+.jumbotron h4 {
+  color: #FFF;
+  margin-top: -10px;
+}
+
+.login-btn {
+  width: 100px;
+  height: 30px;
+  border: 0px;
+  background: #FFF;
+  border-radius: 15px;
+}
+
+.login-btn:hover {
+  background: #3b5998;
+}
+
+@media screen and (max-width: 1000px) {
+  .jumbotron h2 {
+    margin-top: 0px;
+  }
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #333;
+  text-align: center;
+  color: #FFF;
+  line-height: 5px;
+}
+
+.footer .container {
+  margin-top: 20px;
+}
+
+.submit {
+  margin-top: 10px;
+  width: 100px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }

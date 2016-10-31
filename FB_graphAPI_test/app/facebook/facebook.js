@@ -25,7 +25,12 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
 })
 
 .controller('FacebookCtrl', ['$scope', '$facebook', function($scope, $facebook) {
+    $scope.limitation = 3;
     $scope.isLoggedIn = false;
+
+    $scope.loadMore = function() {
+        $scope.limitation += 3;
+    }
 
     $scope.login = function() {
         $facebook.login().then(function() {
@@ -59,16 +64,19 @@ angular.module('ngSocial.facebook', ['ngRoute', 'ngFacebook'])
         },
 
         function(err) {
-            $scope.welcomeMsg = "Please Log In"; 
+            $scope.welcomeMsg = ""; 
         }),
 
         $scope.postStatus = function() {
             var body = this.body;
+
+            alert("You sure you want to post\n" + '"' + body + '"' + "\non your facebook page?");
+
             $facebook.api("/me/feed", "post", {message: body}).then(function(response) {
                 $scope.mgs = "Posted!";
                 refresh();
             });
-            body = "";
+            this.body = "";
         }
     }
     refresh();
