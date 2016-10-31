@@ -56,14 +56,14 @@ hr {
 .jumbotron {
   height: 600px;
   background: #333;
-  background-image: url("../app/images/fb.png");
+  background-image: url("https://lh4.googleusercontent.com/t7fO7XVMI_VAFLG8m-P2qwV5poEIEmK87lvJ1ezXIBmGwAaqS6Eeh4Au_hYhYQR-j945B5PJT_I3lJo=w1085-h954-rw");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
 }
 
 .jumbotron:hover {
-  background-image: url("../app/images/fb_ori.png");
+  background-image: url("https://lh4.googleusercontent.com/pz828lpHWbBBdJ2VvTXG9vy6_DNoB_yxzbUI-umEyZWdA5UoB29FhFt8T9f5fXNvYFAFgN6vEndU5WU=s800");
 }
 
 .jumbotron h2{
