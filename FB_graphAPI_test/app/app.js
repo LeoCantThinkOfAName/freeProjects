@@ -1,11 +1,5 @@
 'use strict';
 
-var port = process.env.PORT || 8000;
-
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
-
 // Declare app level module which depends on views, and components
 angular.module('ngSocial', [
   'ngRoute',
