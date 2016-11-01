@@ -46,7 +46,7 @@ h5 {
 }
 
 .hero {
-  background: url("https://lh6.googleusercontent.com/8j-65RlucwzmMxqLxzZHzHKJIbtbeadNDBUnepq0x4fekQwscpxqNB_PfS59lrYTRC-1J3ULFA6eSDU=w1143-h954-rw");
+  background: url("gs://msg-board-5fcfb.appspot.com/tunnel.jpg");
   background-size: cover;
   height: 400px;
 }
@@ -62,6 +62,7 @@ h5 {
   background: #FFF;
   border: 1px solid #CCC;
   padding: 5px 20px;
+  z-index: 100;
 }
 
 .closeBtn {
@@ -71,6 +72,7 @@ h5 {
 
 .postBtn {
   position: absolute;
+  z-index: 1;
   top: 270px;
   left: 50%;
   transform: translateX(-50%);
