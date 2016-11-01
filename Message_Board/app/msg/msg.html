@@ -17,13 +17,13 @@
                     <div class="small-12 columns">
                         <label>
                             <div class="small-3 columns">
-                                <img ng-src="../../app/images/{{ pic }}.png" alt="{{ pic }}">
+                                <img ng-src="{{ geImgUrl( pic ) }}" alt="{{ pic }}">
                             </div>
                             <div class="small-9 columns">
                                 <select ng-model="pic" required>
                                     <option value="">Select you picuter!</option>
-                                    <option value="cat" selected>Cat</option>
-                                    <option value="bear">Bear</option>
+                                    <option value="cat.png" selected>Cat</option>
+                                    <option value="bear.png">Bear</option>
                                 </select>
                             </div>
                         </label>
@@ -73,7 +73,7 @@
             <tbody>
                 <tr ng-repeat="message in messages | orderBy: '-date' | limitTo: limitation">
                     <td width="5%">
-                        <img ng-src="gs://msg-board-5fcfb.appspot.com/{{ message.pic }}.png" alt="">
+                        <img ng-src="{{ geImgUrl( message.pic ) }}" alt="">
                     </td>
                     <td width="10%">{{ message.name }}</td>
                     <td width="50%">
@@ -93,6 +93,7 @@
         <div class="row">
             <button type="button" ng-click="loadMore()" class="button columns">Older Posts</button>
         </div>
+        <img ng-src="{{ getImgUrl(cat) }}" alt="">
     </div>
 </div>
 <button type="button" class="button postBtn" ng-click="showAddForm()">Start Posting!</button>

@@ -1,9 +1,12 @@
   'use strict';
 
   var config = {
-        apiKey: "AIzaSyCAGHdNbf7YOQo6ETqL8URdg-AVi9012os",
-        databaseURL: "https://msg-board-5fcfb.firebaseio.com/" 
-      }
+        apiKey: "AIzaSyD_12WfHECSUbeZudXpESkZl2W2q9HCmJI",
+        authDomain: "msg-board-8853a.firebaseapp.com",
+        databaseURL: "https://msg-board-8853a.firebaseio.com",
+        storageBucket: "msg-board-8853a.appspot.com",
+        messagingSenderId: "1095194717403"
+      };
       firebase.initializeApp(config);
 
   angular.module("msgBoard.msgs", ["ngRoute", "firebase"])
@@ -17,6 +20,11 @@
 
     .controller("MsgCtrl", ["$scope", "$firebaseArray", function($scope, $firebaseArray) {
       var root = firebase.database().ref();
+      var storage = firebase.storage();
+
+      $scope.getImgUrl = function(filename) {
+        return storage.ref("images/" + filename).getDownloadURL();
+      }
 
       $scope.limitation = 10;
 
