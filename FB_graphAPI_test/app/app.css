@@ -126,3 +126,11 @@ body {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+
+.FB-link {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+}
