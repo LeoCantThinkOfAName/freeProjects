@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myContacts" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myContacts" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myContacts" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="msgBoard" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Message Board</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+</head>
+<body ng-controller="MsgCtrl">
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <div class="top-bar-title"><strong>Message Board</strong></div>
+    </div>
+  </div>
+  <section class="hero">
+    <div class="row intro">
+      <div class="columns text-center title-vert-center">
+        <h1>Message Board</h1>
+        
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+      <div ng-view></div>
+  </div>
+
+  <footer>
+    
+  </footer>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+  <script src="bower_components/foundation/js/foundation.min.js"></script>
+  <script src="app.js"></script>
+  <script src="msg/msg.js"></script>
+</body>
+</html>

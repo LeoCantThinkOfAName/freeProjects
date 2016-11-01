@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="large-10 columns">
+        <div class="alert-box" data-alert ng-show="msg">{{ msg }}</div>
+
+        <div class="row" ng-show="messageShow">
+            <div class="panel">
+                <h3>{{ name }}</h3>
+
+            </div>
+        </div>
+        <!-- ADD MESSAGE -->
+        <div class="postBox small-11 large-4 medium-6" ng-show="addFormShow">
+            <form ng-submit="addFormSubmit()">
+                <button type="button" class="button tiny alert closeBtn" ng-click="closeBox()">X</button>
+                <h3>Post Message</h3>
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label>
+                            <div class="small-3 columns">
+                                <img ng-src="../../app/images/{{ pic }}.png" alt="{{ pic }}">
+                            </div>
+                            <div class="small-9 columns">
+                                <select ng-model="pic" required>
+                                    <option value="">Select you picuter!</option>
+                                    <option value="cat" selected>Cat</option>
+                                    <option value="bear">Bear</option>
+                                </select>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="large-12 columns">
+                        <label>User Name:
+                            <input type="text" ng-model="name" placeholder="Please identify your self!" required/>
+                        </label>
+                    </div>
+                    <div class="large-12 columns">
+                        <label>Message:
+                            <textarea ng-model="content" rows="5" placeholder="Your message goes here!" required></textarea>
+                        </label>
+                    </div>   
+                </div>
+                <div class="large-12 columns">
+                    <input type="submit" value="Post it!" class="button">
+                </div>
+            </form>
+        </div>
+
+        <!-- EDIT MESSAGE -->
+        <div class="postBox" ng-show="editFormShow">
+            <form ng-submit="editFormSubmit()">
+                <button type="button" class="button tiny alert closeBtn" ng-click="closeBox()">X</button>
+                <h3>Edit Content</h3>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label>User Name:
+                            <input type="text" ng-model="name" placeholder="Please identify your self!" required disabled/>
+                        </label>
+                    </div>
+                    <div class="large-6 columns">
+                        <label>Message:
+                            <textarea ng-model="content" rows="5" placeholder="Your message goes here!" required></textarea>
+                        </label>
+                    </div>   
+                </div>
+                <div class="large-12 columns">
+                    <input type="submit" value="Comfirm" class="button">
+                </div>
+            </form>
+        </div>
+
+        <h3>Message Box ({{ messages.length }})</h3>
+        <table>
+            <tbody>
+                <tr ng-repeat="message in messages | orderBy: '-date' | limitTo: limitation">
+                    <td width="5%">
+                        <img ng-src="../../app/images/{{ message.pic }}.png" alt="">
+                    </td>
+                    <td width="10%">{{ message.name }}</td>
+                    <td width="50%">
+                        <pre><span>{{ message.content }}</span></pre>
+                        <hr style="margin: 0px">
+                        <span class="postDate">
+                        {{ message.date | date:"medium"}}
+                        </span>
+                    </td>
+                    <td width="15%">
+                        <a href="" class="button tiny" ng-click="showEditForm(message)" title="edit">&olarr;</a>
+                        <a href="" class="button tiny alert" ng-click="removeMessage(message)" title="remove">X</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <button type="button" ng-click="loadMore()" class="button columns">Older Posts</button>
+        </div>
+    </div>
+</div>
+<button type="button" class="button postBtn" ng-click="showAddForm()">Start Posting!</button>

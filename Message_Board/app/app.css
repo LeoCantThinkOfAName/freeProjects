@@ -1,0 +1,90 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.panel {
+  background: #f9f9f9;
+  border: #CCC 1px solid;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  line-height: 1.8em;
+}
+
+h5 {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f4f4f4;
+}
+
+.hero {
+  background: url("https://lh6.googleusercontent.com/8j-65RlucwzmMxqLxzZHzHKJIbtbeadNDBUnepq0x4fekQwscpxqNB_PfS59lrYTRC-1J3ULFA6eSDU=w1143-h954-rw");
+  background-size: cover;
+  height: 400px;
+}
+
+.title-vert-center {
+  margin-top: 150px;
+}
+
+.postBox {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background: #FFF;
+  border: 1px solid #CCC;
+  padding: 5px 20px;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 15px;
+}
+
+.postBtn {
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.postDate {
+  font-size: 5px;
+  color: #BBB;
+}
+
+.small-2 img {
+  height: 50px;
+}
+
+pre span {
+  font-family: sans-serif;
+}
