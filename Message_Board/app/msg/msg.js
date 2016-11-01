@@ -20,18 +20,6 @@
 
     .controller("MsgCtrl", ["$scope", "$firebaseArray", function($scope, $firebaseArray) {
       var root = firebase.database().ref();
-      var storage = firebase.storage();
-
-      $scope.getImgUrl = function(file) {
-          storage.ref("images/" + file + ".png")
-            .getDownloadURL()
-            .then(function onSuccess(url) {
-              return url;
-            })
-            .catch(function onError(err) {
-              console.log("Error occured..." + err);
-            })
-        }
 
       $scope.limitation = 10;
 
