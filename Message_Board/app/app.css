@@ -90,3 +90,24 @@ h5 {
 pre span {
   font-family: sans-serif;
 }
+
+.goTop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  text-align: center;
+  background: #3cb371;
+  color: #FFF;
+  padding-top: 10px;
+  line-height: 15px;
+  z-index: 100;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.goTop:hover {
+  background: #37a267;
+  transition: 0.3s;
+}
