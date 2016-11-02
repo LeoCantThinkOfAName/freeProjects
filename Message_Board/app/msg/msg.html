@@ -46,16 +46,11 @@
         </div>
 
         <!-- EDIT MESSAGE -->
-        <div class="postBox" ng-show="editFormShow">
+        <div class="postBox small-11 large-4 medium-6" ng-show="editFormShow">
             <form ng-submit="editFormSubmit()">
                 <button type="button" class="button tiny alert closeBtn" ng-click="closeBox()">X</button>
                 <h3>Edit Content</h3>
                 <div class="row">
-                    <div class="large-6 columns">
-                        <label>User Name:
-                            <input type="text" ng-model="name" placeholder="Please identify your self!" required disabled/>
-                        </label>
-                    </div>
                     <div class="large-6 columns">
                         <label>Message:
                             <textarea ng-model="content" rows="5" placeholder="Your message goes here!" required></textarea>
