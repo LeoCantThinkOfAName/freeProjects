@@ -1,11 +1,11 @@
   'use strict';
 
   var config = {
-        apiKey: "AIzaSyD_12WfHECSUbeZudXpESkZl2W2q9HCmJI",
-        authDomain: "msg-board-8853a.firebaseapp.com",
-        databaseURL: "https://msg-board-8853a.firebaseio.com",
-        storageBucket: "msg-board-8853a.appspot.com",
-        messagingSenderId: "1095194717403"
+        apiKey: "AIzaSyCKbhiUOyv5-Mb7P2fOk0XqeeDADNpjz4w",
+        authDomain: "msg-board-5eaf2.firebaseapp.com",
+        databaseURL: "https://msg-board-5eaf2.firebaseio.com",
+        storageBucket: "",
+        messagingSenderId: "236337303497"
       };
       firebase.initializeApp(config);
 
