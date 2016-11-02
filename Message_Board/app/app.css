@@ -127,3 +127,26 @@ pre span {
   right: 10px;
   font-size: 30px;
 }
+
+.userPic {
+  width: 100px;
+}
+
+.userName {
+  text-align: center;
+  width: 100px;
+}
+
+.postContent {
+  width: 70%;
+}
+
+.actionBtn {
+  text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  .userPic img {
+    min-width: 30px;
+  }
+}

@@ -62,11 +62,11 @@
         <table>
             <tbody>
                 <tr ng-repeat="message in messages | orderBy: '-date' | limitTo: limitation">
-                    <td width="5%">
+                    <td class="userPic">
                         <img ng-src="{{getImgUrl(message.pic)}}" alt="{{ message.pic }}">
                     </td>
-                    <td width="10%">{{ message.name }}</td>
-                    <td width="50%">
+                    <td class="userName">{{ message.name }}</td>
+                    <td class="postContent">
                         <pre><span>{{ message.content }}</span></pre>
                         <hr style="margin: 0px">
                         <span class="postDate" ng-if="!checkLastEdit(message)">
@@ -77,7 +77,7 @@
                         Last edit @ {{ message.lastedit | date:"medium"}}
                         </span>
                     </td>
-                    <td width="15%">
+                    <td class="actionBtn">
                         <a href="" class="button tiny" ng-click="showEditForm(message)" title="edit">&olarr;</a>
                         <a href="" class="button tiny alert" ng-click="removeMessage(message)" title="remove">X</a>
                     </td>
