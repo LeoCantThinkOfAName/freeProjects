@@ -48,6 +48,7 @@
         $scope.name = message.name;
         $scope.content = message.content;
         $scope.pic = message.pic;
+        $scope.lastedit = message.lastedit;
       }
 
       $scope.hide = function() {
@@ -66,7 +67,8 @@
           name: name,
           content: content,
           date : date.getTime(),
-          pic: pic
+          pic: pic,
+          lastedit: ""
         })
         .then(function(root) {
           var id = root.child("message").push().key;
@@ -80,13 +82,14 @@
 
       $scope.editFormSubmit = function() {
         console.log("Updating Message...");
-
+        var date = new Date();
         var id = $scope.id;
 
         var record = $scope.messages.$getRecord(id);
         
         record.name = $scope.name;
         record.content = $scope.content;
+        record.lastedit = date.getTime();
 
         $scope.messages.$save(record).then(function(root) {
           console.log(root.key);
@@ -119,6 +122,12 @@
       $scope.closeBox = function() {
         $scope.editFormShow = false;
         $scope.addFormShow = false;
+      }
+
+      $scope.checkLastEdit = function(message) {
+        if(message.lastedit != "") {
+          return message.lastedit;
+        }
       }
 
       function clearFields() {
