@@ -1,6 +1,5 @@
 <div class="row">
     <div class="large-12 columns">
-        <div class="alert-box" data-alert ng-show="msg">{{ msg }}</div>
         <!-- ADD MESSAGE -->
         <div class="postBox small-11 large-4 medium-6" ng-show="addFormShow">
             <form ng-submit="addFormSubmit()">
@@ -57,6 +56,9 @@
         </div>
 
         <h3>Message Box ({{ messages.length }})</h3>
+        <div class="success callout" data-alert ng-show="msg">
+            {{ msg }}<a href="#" class="close">&times;</a>
+        </div>
         <table>
             <tbody>
                 <tr ng-repeat="message in messages | orderBy: '-date' | limitTo: limitation">

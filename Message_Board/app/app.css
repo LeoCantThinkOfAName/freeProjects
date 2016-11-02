@@ -111,3 +111,19 @@ pre span {
   background: #37a267;
   transition: 0.3s;
 }
+
+.callout {
+  height: 20px;
+  padding: 0px;
+  line-height: 0px;
+}
+
+.success.callout {
+  border: none;
+}
+
+.callout a {
+  position: absolute;
+  right: 10px;
+  font-size: 30px;
+}
