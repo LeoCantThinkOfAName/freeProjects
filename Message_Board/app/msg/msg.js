@@ -1,3 +1,6 @@
+  (function() {
+
+  })()
   'use strict';
 
   var config = {
@@ -18,8 +21,9 @@
         });
     }])
 
-    .controller("MsgCtrl", ["$scope", "$firebaseArray", function($scope, $firebaseArray) {
-      var root = firebase.database().ref();
+    .controller("MsgCtrl", ["$scope", "$firebaseArray", "$firebaseObject", function($scope, $firebaseArray, $firebaseObject) {
+      var root = firebase.database().ref("msg");
+      var picRoot = firebase.database().ref("pic");
 
       $scope.limitation = 10;
 
@@ -28,6 +32,12 @@
       }
 
       $scope.messages = $firebaseArray(root);
+      $scope.pics = $firebaseObject(picRoot);
+
+      $scope.getImgUrl = function(obj) {
+        var name = obj;
+        return $scope.pics[name];
+      }
 
       $scope.showAddForm = function() {
         $scope.addFormShow = true;
@@ -89,7 +99,7 @@
 
         $scope.editFormShow = false;
 
-        $scope.msg = "Contact Updated"
+        $scope.msg = "Message Updated"
       }
 
       $scope.showMessage = function(message) {
@@ -120,3 +130,4 @@
 
     }]);
 
+  

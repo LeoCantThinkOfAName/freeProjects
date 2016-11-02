@@ -46,6 +46,7 @@ h5 {
 }
 
 .hero {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/msg-board-8853a.appspot.com/o/images%2Ftunnel.jpg?alt=media&token=553e512d-7ac6-4057-815b-033f03886074");
   background-size: cover;
   height: 400px;
 }
