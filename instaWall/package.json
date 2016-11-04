@@ -19,14 +19,5 @@
     "bower" : "*",
     "method-override" : "*"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
   "license": "MIT"
 }
