@@ -1,7 +1,12 @@
-logs/*
-!.gitkeep
-node_modules/
-bower_components/
-tmp
+# Node build artifacts
+node_modules
+npm-debug.log
+
+# Local development
+*.env
+*.dev
 .DS_Store
-.idea
+
+# Docker
+Dockerfile
+docker-compose.yml
