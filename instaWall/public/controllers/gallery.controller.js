@@ -1,6 +1,6 @@
 "use strict"
 
-angular.module("instaApi")
+angular.module("instaWall")
     .controller("GalleryCtrl", ["$scope", "instagram", "$resource", function($scope, instagram, $resource) {
         $scope.images = [];
 

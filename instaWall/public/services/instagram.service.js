@@ -1,4 +1,4 @@
-angular.module("instaApi")
+angular.module("instaWall")
     .factory("instagram", function($resource) {
         return {
             fetchPic: function(callback) {

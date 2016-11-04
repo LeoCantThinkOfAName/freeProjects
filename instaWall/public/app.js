@@ -1,5 +1,5 @@
 "use strict";
-angular.module("instaApi", ["ngRoute", "ngResource"])
+angular.module("instaWall", ["ngRoute", "ngResource"])
     .config(["$routeProvider", function($routeProvider) {
         $routeProvider
             .when("/gallery", {
