@@ -4,7 +4,7 @@
   "description": "A simple page powered by InstagramApi",
   "main": "index.js",
   "engines": {
-    "node": "0.6.x"
+    "node": "^4.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
