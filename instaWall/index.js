@@ -6,7 +6,7 @@ var methodOverride = require("method-override");
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({"extended": "true"}));
 app.use(bodyParser.json());
