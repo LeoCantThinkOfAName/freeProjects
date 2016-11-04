@@ -1,32 +1,15 @@
 {
-  "name": "InstaWall",
-  "version": "0.0.1",
-  "description": "A simple page powerd by Instagram API",
-  "engines": {
-    "node": "5.9.1"
-  },
+  "name": "instawall",
+  "version": "1.0.0",
+  "description": "A simple page powered by InstagramApi",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "ejs": "2.4.1",
-    "express": "4.13.3",
-    "body-parser" : "~1.10.2",
-    "cookie-parser" : "~1.3.3",
-    "debug" : "~2.1.1",
-    "morgan" : "~1.5.1",
-    "bower" : "*",
-    "method-override" : "*"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "origin"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+  "author": "Leo",
+  "license": "ISC"
 }
