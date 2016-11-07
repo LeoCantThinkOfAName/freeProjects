@@ -1,18 +1,11 @@
 // set embed box size dynamically
 window.onresize = function() {
-    var winW = document.body.clientWidth;
-
-    if(document.querySelector(".userName") && winW < 700) {
-        var emb = document.querySelector(".emb");
-        var img = emb.querySelector("img");
-
-        emb.style.width = winW - 50 + "px";
-        img.style.width = winW - 70 + "px";
+    var winW = window.innerWidth;
+    var emb = document.querySelector(".mainPic");
+    if(winW < 700) {
+        emb.style.width = winW - 100 + "px";
+    } else {
+        emb.style.width = "652px";
     }
-
-    // set footer to position
-    var devH = window.innerHeight;
-    var devW = window.innerWidth;
-    var footer = document.querySelector("footer");
 }
 

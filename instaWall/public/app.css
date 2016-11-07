@@ -58,11 +58,11 @@ footer {
 
 #lightBoxMask {
     position: absolute;
-    top: 50px;
+    top: 0px;
     left: 0px;
     background: rgba(0,0,0,0.5);
     width: 100%;
-    height: 120%;
+    height: 100%;
     display: none;
 }
 
@@ -73,19 +73,43 @@ footer {
     right: 20px;
 }
 
+.embOuter {
+    background: rgba(0,0,0,0.8);
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 19px;
+    display: none;
+}
+
+.mainPic {
+    margin-top: 60px;
+}
+
 .userPic {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 30px;
+    top: 19px;
+    left: 19px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 }
 
 .userName {
     position: absolute;
-    top: 18px;
-    left: 50px;
+    left: 80px;
+    top: 30px;
+    color: #FFF;
+    font-size: 20px;
 }
+
+.postOn {
+    color: #FFF;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+
 
 @media screen and (max-width: 1200px) {
     .instaTitle {
